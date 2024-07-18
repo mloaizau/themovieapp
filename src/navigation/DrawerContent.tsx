@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import { Drawer, Switch, TouchableRipple, Text } from 'react-native-paper';
+import { Drawer, Switch, TouchableRipple, Text, MD2DarkTheme } from 'react-native-paper';
 import usePreferences from '../hooks/usePreferences';
 
 export const DrawerContent = (props: any) => {

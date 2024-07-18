@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { PaperProvider, DefaultTheme as DfTPaper, MD2DarkTheme } from 'react-native-paper';
+import { PaperProvider, MD2LightTheme as DfTPaper, MD2DarkTheme } from 'react-native-paper';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { Navigation } from './src/navigation/Navigation';
 import PreferenceContext from './src/context/PreferencesContext';
