@@ -115,3 +115,19 @@ export const getPopularMoviesApi = (page = 1) => {
         .then(response => { return response })
         .catch(err => {return err});
 }
+
+export const getSearchMoviesApi = (search: string) => {
+    const url = API_HOST + "/search/movie" + "?language=" + LANG + "&query=" + search
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    return fetch(url, options)
+        .then(response => { return response.json()})
+        .then(response => { return response })
+        .catch(err => {return err});
+}

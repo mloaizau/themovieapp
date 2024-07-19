@@ -5,7 +5,7 @@ import { Home } from '../screens/Home';
 import { Movie } from '../screens/Movie';
 import { News } from '../screens/News';
 import { Popular } from '../screens/Popular';
-import Search from '../screens/Search';
+import { Search } from '../screens/Search';
 
 const Stack = createStackNavigator();
 
@@ -29,8 +29,6 @@ export const StackNavigation = (props: any) => {
                     onPress={ () => navigation.openDrawer() }
                 ></IconButton>)
         }
-
-
     }
 
     const buttonRight = () => {
@@ -48,7 +46,10 @@ export const StackNavigation = (props: any) => {
             <Stack.Screen name='movie' component={Movie} options={{title: "Movie", headerLeft: () => buttonLeft("movie"), headerRight: () => buttonRight(), headerTransparent:true}}></Stack.Screen>
             <Stack.Screen name='news' component={News} options={{title: "Películas Nuevas", headerLeft: () => buttonLeft("news"), headerRight: () => buttonRight()}}></Stack.Screen>
             <Stack.Screen name='popular' component={Popular} options={{title: "Películas Populares", headerLeft: () => buttonLeft("popular"), headerRight: () => buttonRight()}}></Stack.Screen>
-            <Stack.Screen name='search' component={Search} options={{title: "Buscador", headerLeft: () => buttonLeft("search")}}></Stack.Screen>
+            <Stack.Screen 
+                name='search' 
+                component={Search} 
+                options={{title: "", headerTransparent:true, headerLeft: () => buttonLeft("search")}}></Stack.Screen>
         </Stack.Navigator>
     )
 }

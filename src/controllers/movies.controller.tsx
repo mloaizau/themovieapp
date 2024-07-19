@@ -1,4 +1,4 @@
-import { getPopularMoviesApi, getGenreMovieApi, getNewsMoviesApi, getAllGenresApi, getGenresMoviesApi, getMovieByIdApi, getVideoMovieApi } from '../api/movies.api';
+import { getSearchMoviesApi, getPopularMoviesApi, getGenreMovieApi, getNewsMoviesApi, getAllGenresApi, getGenresMoviesApi, getMovieByIdApi, getVideoMovieApi } from '../api/movies.api';
 import { Welcome } from '../interfaces/movies.interface';
 
 export const MoviesController = () => {
@@ -43,6 +43,11 @@ export const MoviesController = () => {
         return info;
     }
 
+    const getSearchMovie = async (search: string) => {
+        const info = await getSearchMoviesApi(search);
+        return info;
+    }
+
     return { 
         getNewsMovies, 
         getGenreMovies, 
@@ -50,7 +55,8 @@ export const MoviesController = () => {
         getGenresMovies, 
         getMovieById,
         getMovieVideo,
-        getPopularMovie
+        getPopularMovie,
+        getSearchMovie
     };
 
 }

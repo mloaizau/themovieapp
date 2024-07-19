@@ -7,7 +7,6 @@ import { BASE_PATH_IMG } from '../utils/constants';
 import usePreferences from '../hooks/usePreferences';
 
 const { width } = Dimensions.get("window");
-const ITEM_WIDTH = Math.round(width * 0.3);
 
 export const News = (props: any) => {
 
