@@ -29,11 +29,15 @@ export const Movie = (props: any) => {
 
     return (
         <>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false} >
                 <MovieImage posterPath={movie.poster_path} />
                 <MovieTrailer setShowVideo={setShowVideo} />
                 <MovieTitle movie={movie} />
                 <MovieRating voteCount={movie.vote_count} voteAverage={movie.vote_average} />
+                <Text style={styles.overview} > {movie.overview} </Text>
+                <Text style={[styles.overview, {marginBottom: 30}]} >
+                    Fecha de lanzamiento: {movie.release_date}
+                </Text>
             </ScrollView>
             {/* <ModalVideo show={showVideo} setShow={setShowVideo} idMovie={id} /> */}
         </>
@@ -162,5 +166,12 @@ const styles = StyleSheet.create({
         marginTop: 10,
         flexDirection: "row",
         alignItems: "center"
+    },
+    overview: {
+        marginHorizontal: 30,
+        marginTop: 20,
+        textAlign: "justify",
+        color: "#8697a5",
+        fontSize: 16
     }
 });
