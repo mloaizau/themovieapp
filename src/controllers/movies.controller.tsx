@@ -1,4 +1,4 @@
-import { getGenreMovieApi, getNewsMoviesApi, getAllGenresApi, getGenresMoviesApi } from '../api/movies.api';
+import { getGenreMovieApi, getNewsMoviesApi, getAllGenresApi, getGenresMoviesApi, getMovieByIdApi, getVideoMovieApi } from '../api/movies.api';
 import { Welcome } from '../interfaces/movies.interface';
 
 export const MoviesController = () => {
@@ -23,6 +23,23 @@ export const MoviesController = () => {
         return info;
     }
 
-    return { getNewsMovies, getGenreMovies, getAllGenresMovies, getGenresMovies };
+    const getMovieById = async (idMovie: number) => {
+        const info = await getMovieByIdApi(idMovie);
+        return info;
+    }
+
+    const getMovieVideo = async (idMovie: number) => {
+        const info = await getVideoMovieApi(idMovie);
+        return info;
+    }
+
+    return { 
+        getNewsMovies, 
+        getGenreMovies, 
+        getAllGenresMovies, 
+        getGenresMovies, 
+        getMovieById,
+        getMovieVideo
+    };
 
 }

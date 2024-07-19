@@ -67,3 +67,35 @@ export const getGenresMoviesApi = (idGenres:number) => {
         .then(response => { return response })
         .catch(err => {return err});
 }
+
+export const getMovieByIdApi = (idMovie:number) => {
+    const url = API_HOST + "/movie/" + idMovie + "?language=" + LANG
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    return fetch(url, options)
+        .then(response => { return response.json()})
+        .then(response => { return response })
+        .catch(err => {return err});
+}
+
+export const getVideoMovieApi = (idMovie:number) => {
+    const url = API_HOST + "/movie/" + idMovie + "/videos" + "?language=" + LANG
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    return fetch(url, options)
+        .then(response => { return response.json()})
+        .then(response => { return response })
+        .catch(err => {return err});
+}
