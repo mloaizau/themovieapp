@@ -30,10 +30,11 @@ export const Search = (props: any) => {
     <SafeAreaView>
       <Searchbar
         placeholder='Busca tu película'
-        iconColor={Platform.OS === "ios" && 'transparent'}
+        iconColor='transparent'
         icon="arrow-left"
         style={[styles.input, {backgroundColor: theme === "dark" ? "#15212b": "#fff"}]}
         onChangeText={(e) => setSearch(e)}
+        value=''
       />
       <ScrollView>
         <View style={styles.container} >

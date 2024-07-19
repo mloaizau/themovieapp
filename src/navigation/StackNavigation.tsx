@@ -6,6 +6,7 @@ import { Movie } from '../screens/Movie';
 import { News } from '../screens/News';
 import { Popular } from '../screens/Popular';
 import { Search } from '../screens/Search';
+import { Platform } from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export const StackNavigation = (props: any) => {
                 return(
                     <IconButton
                         icon={"arrow-left"}
+                        style={{marginTop: Platform.OS === "ios" ? 0 : -3}}
                         onPress={ () => navigation.goBack() }
                     ></IconButton>)
             default:
