@@ -99,3 +99,19 @@ export const getVideoMovieApi = (idMovie:number) => {
         .then(response => { return response })
         .catch(err => {return err});
 }
+
+export const getPopularMoviesApi = (page = 1) => {
+    const url = API_HOST + "/movie/popular" + "?language=" + LANG + "&page=" + page
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    return fetch(url, options)
+        .then(response => { return response.json()})
+        .then(response => { return response })
+        .catch(err => {return err});
+}

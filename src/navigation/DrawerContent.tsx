@@ -8,7 +8,7 @@ export const DrawerContent = (props: any) => {
 
     const { navigation } = props;
     const [active, setActive] = useState("home");
-    const {theme, ToggleTheme }= usePreferences();
+    const {theme, ToggleTheme } = usePreferences();
 
     const onChangeScreen = (screen: string) => {
         setActive(screen);

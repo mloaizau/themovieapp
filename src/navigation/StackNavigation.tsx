@@ -4,7 +4,7 @@ import { IconButton } from 'react-native-paper';
 import { Home } from '../screens/Home';
 import { Movie } from '../screens/Movie';
 import News from '../screens/News';
-import Popular from '../screens/Popular';
+import { Popular } from '../screens/Popular';
 import Search from '../screens/Search';
 
 const Stack = createStackNavigator();

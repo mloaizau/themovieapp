@@ -16,7 +16,7 @@ export const Movie = (props: any) => {
     const { id } = route.params;
     const { getMovieById } = MoviesController();
 
-    const [movie, setMovie] = useState(null);
+    const [movie, setMovie] = useState<any>(null);
     const [showVideo, setShowVideo] = useState(false);
 
     useEffect(() => {   
