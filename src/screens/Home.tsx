@@ -6,14 +6,16 @@ import { Result } from '../interfaces/movies.interface';
 import { Title } from 'react-native-paper';
 import { CarouselVertical } from '../components/CarouselVertical';
 import { map } from "lodash";
+import { CarouselMulti } from '../components/CarouselMulti';
 
 export const Home = (props: any) => {
 
     const [newMovies, setNewMovies] = useState<Result[]>([]);
     const [genreList, setGenreList] = useState(null);
     const [genreSelect, setGenreSelect] = useState(28);
+    const [genreMovies, setGenreMovies] = useState(null);
 
-    const { getNewsMovies, getAllGenresMovies } = MoviesController();
+    const { getNewsMovies, getAllGenresMovies, getGenresMovies } = MoviesController();
     const { navigation } = props;
 
     useEffect(() => {
@@ -29,6 +31,13 @@ export const Home = (props: any) => {
             setGenreList(info.genres);
         });
     }, []);
+
+    useEffect(() => {
+        getGenresMovies(genreSelect).then((resp) => {
+            const info = resp;
+            setGenreMovies(info.results);
+        });
+    }, [genreSelect]);
 
     const onChangeGenre = (newGenreId: number) => {
         setGenreSelect(newGenreId);
@@ -61,6 +70,11 @@ export const Home = (props: any) => {
                         ))
                     }
                 </ScrollView>
+                {
+                    genreMovies && (
+                        <CarouselMulti data={genreMovies} navigation={navigation} />
+                    )
+                }
             </View>
         </ScrollView>
     )

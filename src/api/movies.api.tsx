@@ -51,3 +51,19 @@ export const getAllGenresApi = () => {
         .then(response => { return response })
         .catch(err => {return err});
 }
+
+export const getGenresMoviesApi = (idGenres:number) => {
+    const url = API_HOST + "/discover/movie?with_genres="+ idGenres +"&language=" + LANG
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    return fetch(url, options)
+        .then(response => { return response.json()})
+        .then(response => { return response })
+        .catch(err => {return err});
+}
