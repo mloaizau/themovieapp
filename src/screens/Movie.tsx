@@ -1,9 +1,9 @@
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, StyleSheet, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { MoviesController } from '../controllers/movies.controller';
 import { BASE_PATH_IMG } from '../utils/constants';
 import { ModalVideo } from '../components/ModalVideo';
-import { IconButton, Title } from 'react-native-paper';
+import { IconButton, Text, Title } from 'react-native-paper';
 import { map } from "lodash";
 import { Rating } from 'react-native-ratings';
 import starDark from "../assets/png/starDark.png";
@@ -26,6 +26,8 @@ export const Movie = (props: any) => {
     }, [])
 
     if(!movie) return null;
+
+    console.log(movie);
 
     return (
         <>
@@ -172,6 +174,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         textAlign: "justify",
         color: "#8697a5",
-        fontSize: 16
+        fontSize: 18
     }
 });

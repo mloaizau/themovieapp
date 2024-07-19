@@ -5,6 +5,7 @@ import { Text, Searchbar } from 'react-native-paper';
 import { size, map } from "lodash";
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { BASE_PATH_IMG } from '../utils/constants';
+import usePreferences from '../hooks/usePreferences';
 
 const { width } = Dimensions.get("window");
 
@@ -12,6 +13,7 @@ export const Search = (props: any) => {
 
   const { getSearchMovie } = MoviesController();
   const { navigation } = props;
+  const { theme } = usePreferences();
 
   const [movies, setMovies] = useState(null);
   const [search, setSearch] = useState("");
@@ -30,7 +32,7 @@ export const Search = (props: any) => {
         placeholder='Busca tu película'
         iconColor={Platform.OS === "ios" && 'transparent'}
         icon="arrow-left"
-        style={styles.input}
+        style={[styles.input, {backgroundColor: theme === "dark" ? "#15212b": "#fff"}]}
         onChangeText={(e) => setSearch(e)}
       />
       <ScrollView>
@@ -71,8 +73,7 @@ const Movie = (props: any) => {
 
 const styles = StyleSheet.create({
   input: {
-    marginTop: -3,
-    backgroundColor: "#15212b"
+    marginTop: -3
   },
   container: {
     flex: 1,

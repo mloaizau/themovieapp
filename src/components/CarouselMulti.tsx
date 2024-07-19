@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
             height: 10
         },
         shadowOpacity: 1,
-        shadowRadius: 10
+        shadowRadius: 10,
+        height: 250
     },
     img: {
         width: "85%",

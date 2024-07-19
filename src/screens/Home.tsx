@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { MoviesController } from '../controllers/movies.controller';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Result } from '../interfaces/movies.interface';
-import { Title } from 'react-native-paper';
+import { Text, Title } from 'react-native-paper';
 import { CarouselVertical } from '../components/CarouselVertical';
 import { map } from "lodash";
 import { CarouselMulti } from '../components/CarouselMulti';
@@ -63,7 +63,7 @@ export const Home = (props: any) => {
                             <Text 
                                 key={genre.id} 
                                 onPress={() => onChangeGenre(genre.id)}
-                                style={[styles.genre, {color: genre.id !== genreSelect ? '#8697a5' : '#fff' }]} 
+                                style={[styles.genre, {color: genre.id !== genreSelect ? '#8697a5' : '#d1d1d1' }]} 
                             >
                                 { genre.name }
                             </Text>

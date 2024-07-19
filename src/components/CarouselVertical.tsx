@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Image, Dimensions, TouchableWithoutFeedback, Text } from "react-native";
+import { StyleSheet, View, Image, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { BASE_PATH_IMG } from "../utils/constants";
-import { Title } from "react-native-paper";
+import { Text, Title } from "react-native-paper";
 import { MoviesController } from "../controllers/movies.controller";
 import { map, size } from "lodash";
 
