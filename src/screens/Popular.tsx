@@ -23,7 +23,6 @@ export const Popular = (props: any) => {
   useEffect(() => {
     getPopularMovie(page).then((response) => {
       const totalPages = response.total_pages;
-      console.log(response);
       if (page < totalPages) {
         if (!movies) {
           setMovies(response.results);

@@ -3,8 +3,13 @@ import { Welcome } from '../interfaces/movies.interface';
 
 export const MoviesController = () => {
 
-    const getNewsMovies = async () => {
-        const info = await getNewsMoviesApi();
+    const getNewsMovies = async (page?: number) => {
+        if(!page){
+            const info = await getNewsMoviesApi();
+            return info;
+        }
+
+        const info = await getNewsMoviesApi(page);
         return info;
     }
 

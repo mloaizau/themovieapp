@@ -7,7 +7,7 @@ export const getNewsMoviesApi = (page: number = 1) => {
     return fetch(url, { method: "GET", headers: { "authorization": AUTHORIZATION } })
         .then((res) => { return res.json() })
         .catch((error) => { return error })
-        .then((response: Welcome) => { return response });
+        .then((response) => { return response });
 }
 
 export const getGenreMovieApi = (idGenres: any) => {
