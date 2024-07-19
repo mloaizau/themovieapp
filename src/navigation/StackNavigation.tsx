@@ -21,7 +21,7 @@ export const StackNavigation = (props: any) => {
                 return(
                     <IconButton
                         icon={"arrow-left"}
-                        style={{marginTop: Platform.OS === "ios" ? 0 : -3}}
+                        style={{marginTop: Platform.OS === "ios" ? 3 : -3}}
                         onPress={ () => navigation.goBack() }
                     ></IconButton>)
             default:
