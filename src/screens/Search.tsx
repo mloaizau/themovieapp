@@ -34,7 +34,6 @@ export const Search = (props: any) => {
         icon="arrow-left"
         style={[styles.input, {backgroundColor: theme === "dark" ? "#15212b": "#fff"}]}
         onChangeText={(e) => setSearch(e)}
-        value=''
       />
       <ScrollView>
         <View style={styles.container} >
